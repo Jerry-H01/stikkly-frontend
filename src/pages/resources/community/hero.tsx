@@ -57,19 +57,16 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* ── Main content ── */}
+      {/*  Main content  */}
       <div className="relative z-10 text-center max-w-[1728px] mx-auto px-6 md:px-[128px]">
-
         <h1 className="text-[#101828] text-center font-dm-sans text-[128px] font-semibold leading-[131px] tracking-[-3.84px] self-stretch mb-6">
           Connect. Share. Live
         </h1>
-
 
         <p className="text-[rgba(17,17,17,0.60)] text-center font-dm-sans text-[30px] font-normal leading-[30px] self-stretch mx-auto mb-12 max-w-4xl px-4">
           Join the Stikkly community to share workflows, attend exclusive
           events, and help us shape the future of creative collaboration
         </p>
-
 
         {/* Social proof */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

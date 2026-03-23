@@ -24,6 +24,21 @@ const EventDetails = lazy(
 const HelpCenter = lazy(
   () => import("../../pages/resources/help center")
 );
+const BillingsPage = lazy(
+  () => import("../../pages/resources/help center/categories/billings")
+);
+const AccountsPage = lazy(
+  () => import("../../pages/resources/help center/categories/accounts")
+);
+const ProjectsHelpPage = lazy(
+  () => import("../../pages/resources/help center/categories/projects")
+);
+const CollaborationHelpPage = lazy(
+  () => import("../../pages/resources/help center/categories/collaboration")
+);
+const TroubleshootingPage = lazy(
+  () => import("../../pages/resources/help center/categories/troubleshooting")
+);
 const ReleaseNotes = lazy(
   () => import("../../pages/resources/release notes")
 );
@@ -31,11 +46,11 @@ const UserStoriesPage = lazy(
   () => import("../../pages/resources/user stories")
 );
 
-import LoadingScreen from "../loading/LoadingScreen";
+// import LoadingScreen from "../loading/LoadingScreen";
 
 const MainRoutes: React.FC = () => {
   return (
-    <Suspense fallback={<LoadingScreen />}>
+    <Suspense>
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<LandingPage />} />
@@ -53,6 +68,11 @@ const MainRoutes: React.FC = () => {
             element={<EventDetails />}
           />
           <Route path="/resources/help-center" element={<HelpCenter />} />
+          <Route path="/resources/help-center/billing" element={<BillingsPage />} />
+          <Route path="/resources/help-center/accounts" element={<AccountsPage />} />
+          <Route path="/resources/help-center/projects" element={<ProjectsHelpPage />} />
+          <Route path="/resources/help-center/collaboration" element={<CollaborationHelpPage />} />
+          <Route path="/resources/help-center/troubleshooting" element={<TroubleshootingPage />} />
           <Route path="/resources/release-notes" element={<ReleaseNotes />} />
           <Route path="/resources/user-stories" element={<UserStoriesPage />} />
         </Route>

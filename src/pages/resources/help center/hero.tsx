@@ -1,15 +1,16 @@
 import React from "react";
 import { RiSearch2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
+
+const categoryLinks: { label: string; to: string }[] = [
+  { label: "Accounts",       to: "/resources/help-center/accounts" },
+  { label: "Projects",       to: "/resources/help-center/projects" },
+  { label: "Collaboration",  to: "/resources/help-center/collaboration" },
+  { label: "Billing",        to: "/resources/help-center/billing" },
+  { label: "Troubleshooting",to: "/resources/help-center/troubleshooting" },
+];
 
 const HelpHero: React.FC = () => {
-  const categories = [
-    "Accounts",
-    "Projects",
-    "Collaboration",
-    "Billing",
-    "Troubleshooting",
-  ];
-
   return (
     <section className="bg-[#7058D01A] pt-[200px] pb-[150px] px-6 md:px-[128px] min-h-screen">
       <div className="max-w-[1728px] mx-auto flex flex-col items-center">
@@ -26,7 +27,6 @@ const HelpHero: React.FC = () => {
         {/* Search Bar */}
         <div className="w-full max-w-[1241px] mb-8 mx-auto">
           <div className="flex h-[96px] w-full items-center gap-4 pt-[24px] pr-[28px] pb-[24px] pl-[32px] rounded-[16px] border-2 border-[#D0D5DD] bg-white shadow-[0_2px_4px_0_rgba(16,24,40,0.05)] transition-all focus-within:ring-2 focus-within:ring-[#7F56D9] focus-within:border-transparent">
-
             <RiSearch2Line className="h-8 w-8 text-[#98A2B3] flex-shrink-0" />
             <input
               type="text"
@@ -36,21 +36,18 @@ const HelpHero: React.FC = () => {
           </div>
         </div>
 
-
         {/* Categories */}
         <div className="flex flex-wrap justify-start gap-3 w-full max-w-[1241px] mx-auto">
-
-          {categories.map((category) => (
-            <button
-              key={category}
+          {categoryLinks.map(({ label, to }) => (
+            <Link
+              key={label}
+              to={to}
               className="flex items-center justify-center gap-[10px] px-5 py-[10px] bg-transparent border border-[#3333331A] rounded-[51px] text-[20px] font-normal text-[#475467] hover:bg-white transition-all shadow-sm"
-
             >
-              {category}
-            </button>
+              {label}
+            </Link>
           ))}
         </div>
-
       </div>
     </section>
   );
