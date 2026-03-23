@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Montaga&family=Sora:wght@400;600;700&display=swap");
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --bg-white: #ffffff;
+  --bg-offwhite: #f9fafb;
+  --text-black: #000000;
+  --text-gray: #6b7280;
+  --border-gray: rgba(0, 0, 0, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --colors-lb-foreground: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.font-montaga {
+  font-family: "Montaga", serif;
+}
+
+.text-stroke-lb {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--colors-lb-foreground, #111);
+}
+
+/* Grid Background */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 140px 140px;
+}
+
+/* Dotted Background for Product Page */
+.dotted-bg {
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@font-face {
+  font-family: "TT Backwards Script";
+  src: url("/font/tt_backwards_script/TT%20Backwards%20Script%20Trial%20Regular.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
